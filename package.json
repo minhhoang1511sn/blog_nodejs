@@ -1,0 +1,29 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhhoang1511sn/blog_nodejs.git"
+  },
+  "keywords": [
+    "minhhoang_blog_nodejs"
+  ],
+  "author": "minhhoang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhhoang1511sn/blog_nodejs/issues"
+  },
+  "homepage": "https://github.com/minhhoang1511sn/blog_nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
