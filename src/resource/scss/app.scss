@@ -1,1 +1,8 @@
 @import '_variables.scss';
+div{
+background-color: aqua;
+}
+h1{
+    background-color: yellowgreen;
+    color: $red-color;
+}
