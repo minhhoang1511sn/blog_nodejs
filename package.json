@@ -21,15 +21,27 @@
     "url": "https://github.com/minhhoang1511sn/blog_nodejs/issues"
   },
   "homepage": "https://github.com/minhhoang1511sn/blog_nodejs#readme",
+  "lint-staged": {
+    "src/**/*.{js,json,scss}": "prettier --single-quote --tab-width 4 --trailing-comma all --write"
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit":"lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "express-load": "^1.1.16",
     "patch-package": "^6.4.7",
     "sass": "^1.42.1"
   },
   "devDependencies": {
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.3",
     "morgan": "^1.10.0",
     "node-sass": "^6.0.1",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1"
   }
 }
