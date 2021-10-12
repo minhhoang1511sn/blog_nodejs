@@ -5,7 +5,7 @@ class NewController {
     }
 
     //[GET] /news/:slug
-                                         show(req, res) {
+                        show(req, res) {
         res.send('Minh Hoang');
     }
 }
