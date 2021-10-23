@@ -1,4 +1,4 @@
-diff --git a/node_modules/node-sass/lib/render.js b/node_modules/node-sass/lib/render.js
+zdiff --git a/node_modules/node-sass/lib/render.js b/node_modules/node-sass/lib/render.js
 index 858e02e..2eae2ba 100644
 --- a/node_modules/node-sass/lib/render.js
 +++ b/node_modules/node-sass/lib/render.js

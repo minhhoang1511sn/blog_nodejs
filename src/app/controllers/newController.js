@@ -1,3 +1,5 @@
+const Course = require('../models/Courses');
+const { multipleMongoosetoObject } = require('../../util/mongoose');
 class NewController {
     //[GET]/ news
     index(req, res) {
@@ -5,7 +7,7 @@ class NewController {
     }
 
     //[GET] /news/:slug
-                        show(req, res) {
+                  show(req, res) {
         res.send('Minh Hoang');
     }
 }

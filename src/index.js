@@ -5,6 +5,10 @@ const morgan = require('morgan');
 const app = express();
 const port = 3000;
 const route = require('./routes');
+const db =require('./config/db');
+
+//connect to db
+db.connect();
 
 //route init
 
@@ -22,12 +26,14 @@ app.use(express.json());
 app.use(morgan('combined'));
 //template engine
 //định nghĩa handlebars
-app.engine('handlebars', handlebars());
+app.engine('handlebars', handlebars({helpers: {
+    sum: (a,b)=>a+b,
+}}));
 //set handlerbars bằng view engine
 app.set('view engine', 'handlebars');
-app.set('views', path.join(__dirname, 'resource/views'));
+app.set('views', path.join(__dirname, 'resource','views'));
 
 route(app);
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(` app listening at http://localhost:${port}`);
 });
