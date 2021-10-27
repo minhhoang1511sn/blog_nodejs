@@ -36,6 +36,7 @@
     "express-load": "^1.1.16",
     "method-override": "^3.0.0",
     "mongoose": "^6.0.11",
+    "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
     "patch-package": "^6.4.7",
     "sass": "^1.42.1"

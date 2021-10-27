@@ -5,14 +5,25 @@ class MeController {
 
     //[GET] /me/stored/courses
     storedCourses(req, res,next) {
-        Course.find({})
-        .then(courses =>{res.render('me/stored-courses',{
+
+        Promise.all([Course.find({ }), Course.countDocumentsDeleted({ })])
+        .then(([courses,deletedCount]) =>{
+            res.render('me/stored-courses',{
+                deletedCount,
                 courses: multipleMongoosetoObject(courses)
-                });
+                })
         })
         .catch(next);
-
-   
+       
+    }
+    //[GET] /me/trash/courses
+    trashCourses(req, res,next) {
+        Course.findDeleted({})
+        .then(courses =>res.render('me/trash-courses',{
+                courses: multipleMongoosetoObject(courses)
+                }),
+        )
+        .catch(next);
     }
 
 }
