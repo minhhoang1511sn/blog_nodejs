@@ -54,8 +54,28 @@ class CourseController {
     restore(req,res,next){
         Course.restore({ _id: req.params.id})
         .then(() => res.redirect('back'))
-        .catch(next);
-        
+        .catch(next); 
+    }
+    //[POST] /courses/handle-form-actions
+    handleFormActions(req,res,next){
+        switch(req.body.action){
+            case 'delete':
+                Course.delete({ _id: { $in: req.body.coursesIds}})
+                .then(() => res.redirect('back'))
+                .catch(next);
+                break;
+            case 'restore':
+                Course.restore({ _id: { $in: req.body.coursesIds}})
+                .then(() => res.redirect('back'))
+                .catch(next); 
+                break;
+            case 'deleteforever':
+                Course.deleteOne({ _id: { $in: req.body.coursesIds}})
+                .then(() => res.redirect('back'))
+                .catch(next);
+            default:
+                res.json();
+        }
     }
 }
 
