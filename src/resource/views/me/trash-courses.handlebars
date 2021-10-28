@@ -137,11 +137,11 @@
         }
       }
       //select value delete all
-    $(document).ready(function() {
-        if (!$("#myselect option:selected").length) {
-          $("#myselect option[value='deleteforever']").attr('data-target', '#deleteCourseModel');
-        }
-      });
+     $(document).ready(function(){ 
+             $('#myselect').change(function(){
+               alert($(this).val());                                                          
+             });
+        });
   })
   
 </script>
