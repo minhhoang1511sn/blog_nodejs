@@ -70,9 +70,10 @@ class CourseController {
                 .catch(next); 
                 break;
             case 'deleteforever':
-                Course.deleteOne({ _id: { $in: req.body.coursesIds}})
+                Course.deleteMany({ _id: { $in: req.body.coursesIds}})
                 .then(() => res.redirect('back'))
                 .catch(next);
+                break;
             default:
                 res.json();
         }

@@ -12,7 +12,7 @@
           <option value="restore">Khôi Phục</option>
           <option  data-target="#deleteCourseModel" value="deleteforever">Xóa Vĩnh Viễn</option>
        </select>
-       <button class="btn btn-primary btn-sm disabled btn-checkall-submit">Thực Hiện</button>
+       <button id="btnselect" class="btn btn-primary btn-sm disabled btn-checkall-submit">Thực Hiện</button>
       </div>
     </div>
     <table class="table">
@@ -84,7 +84,6 @@
     var containerForm = document.forms['containerform'];
     var courseItemCheckbox = $('input[name = "coursesIds[]"]');
     var checkallSubmitBtn = $('.btn-checkall-submit');
-    var btnDeleteCourse = document.getElementById('btn-delete-course');
     var restoreBtn = $('.btn-restore')
           $('#deleteCourseModel').on('show.bs.modal',(e)=>{
           var button = $(e.relatedTarget);
@@ -136,12 +135,7 @@
            checkallSubmitBtn.addClass('disabled');
         }
       }
-      //select value delete all
-     $(document).ready(function(){ 
-             $('#myselect').change(function(){
-               alert($(this).val());                                                          
-             });
-        });
+     
   })
   
 </script>
