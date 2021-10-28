@@ -7,10 +7,10 @@
           <input type="checkbox" class="form-check-input" id="checkbok-all" value="" autocomplete="off">
           <label  class="form-check-label" for="checkbok-all">Chọn tất cả</label> 
         </div>
-        <select class="form-control form-control-sm checkbox-select-all-options" name="action" required>
+        <select id="myselect" class="form-control form-control-sm checkbox-select-all-options" name="action" required>
           <option value="">-- Chọn hành động --</option>
           <option value="restore">Khôi Phục</option>
-          <option data-toggle="modal" data-target="#deleteCourseModel" value="deleteforever">Xóa Vĩnh Viễn</option>
+          <option  data-target="#deleteCourseModel" value="deleteforever">Xóa Vĩnh Viễn</option>
        </select>
        <button class="btn btn-primary btn-sm disabled btn-checkall-submit">Thực Hiện</button>
       </div>
@@ -136,6 +136,12 @@
            checkallSubmitBtn.addClass('disabled');
         }
       }
+      //select value delete all
+    $(document).ready(function() {
+        if (!$("#myselect option:selected").length) {
+          $("#myselect option[value='deleteforever']").attr('data-target', '#deleteCourseModel');
+        }
+      });
   })
   
 </script>
